@@ -5,7 +5,7 @@ from .models import Post, Question, Choice
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, '/rolsae/post_list.html', {'posts': posts})
+    return render(request, 'rolsae/post_list.html', {'posts': posts})
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
